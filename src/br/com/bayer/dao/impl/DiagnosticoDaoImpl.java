@@ -31,6 +31,8 @@ public class DiagnosticoDaoImpl implements DiagnosticoDao {
 
             stt.executeUpdate();
 
+            System.out.println("Diagnostico cadastrado com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

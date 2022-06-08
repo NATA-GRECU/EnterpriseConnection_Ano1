@@ -26,6 +26,8 @@ public class RegiaoDaoImpl implements RegiaoDao {
 
             stt.executeUpdate();
 
+            System.out.println("Região cadastrada com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

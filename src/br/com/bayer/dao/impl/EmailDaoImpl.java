@@ -27,6 +27,7 @@ public class EmailDaoImpl implements EmailDao {
             stt.setLong(4, email.getIdPessoa());
 
             stt.executeUpdate();
+            System.out.println("Email cadastrada com sucesso!");
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -18,7 +18,7 @@ public class PesoDaoImpl implements PesoDao {
         try {
             conexao = ConnectionManager.getInstance().getConnetion();
 
-            stt = conexao.prepareStatement("INSERT INTO T_PESO (id_peso, peso, dt_peagem, t_pessoa_id_pessoa) " +
+            stt = conexao.prepareStatement("INSERT INTO T_PESO (id_peso, peso, dt_pesagem, t_pessoa_id_pessoa) " +
                     "VALUES (?, ?, ?, ?)");
 
             stt.setLong(1, peso.getId());
@@ -27,6 +27,8 @@ public class PesoDaoImpl implements PesoDao {
             stt.setLong(4, peso.getIdPessoa());
 
             stt.executeUpdate();
+
+            System.out.println("Peso cadastrada com sucesso!");
 
         } catch (SQLException e) {
             e.printStackTrace();

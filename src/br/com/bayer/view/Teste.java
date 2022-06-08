@@ -5,6 +5,7 @@ import br.com.bayer.entity.*;
 
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Teste {
     public static void main(String[] args) throws ParseException {
@@ -15,6 +16,58 @@ public class Teste {
         cadastrarRua();
         cadastrarResidencia();
         cadastrarPessoa();
+        cadastrarTelefone();
+        cadastrarEmail();
+        cadastrarPeso();
+        cadastrarAltura();
+        cadastrarDoenca();
+        cadastrarDiagnostico();
+    }
+
+    public static void cadastrarDiagnostico()
+    {
+        LocalDate data = LocalDate.of(2022,06,5);
+        java.sql.Date dtSintomas = java.sql.Date.valueOf(data);
+
+        LocalDate data2 = LocalDate.of(2022,06,7);
+        java.sql.Date dtEntrada = java.sql.Date.valueOf(data);
+        Diagnostico diagnostico = new Diagnostico(1, "336677",dtSintomas, "Parecetamol e Injeção",
+                1, dtEntrada, null);
+        DAOFactory.getDiagnosticoDao().insert(diagnostico);
+    }
+
+    public static void cadastrarDoenca()
+    {
+        Doenca doenca = new Doenca(1,"Dengue", "Febre, dor de cabeça e etc.", 1);
+        DAOFactory.getDoencaDao().insert(doenca);
+    }
+
+    public static void cadastrarPeso()
+    {
+        Date data = new Date();
+        java.sql.Date dt = new java.sql.Date(data.getTime());
+        Peso peso = new Peso(1, 80.3,dt , 1);
+        DAOFactory.getPesoDao().insert(peso);
+    }
+
+    public static void cadastrarEmail()
+    {
+        Email email = new Email(1, "pessoal","natagrecu34@gmail.com", 1);
+        DAOFactory.getEmailDao().insert(email);
+    }
+
+    public static void cadastrarTelefone()
+    {
+        Telefone telefone = new Telefone(1, "973767605", 11, 55, 1);
+        DAOFactory.getTelefoneDao().insert(telefone);
+    }
+
+    public static void cadastrarAltura()
+    {
+        Date data = new Date();
+        java.sql.Date dt = new java.sql.Date(data.getTime());
+        Altura altura = new Altura(1, 1.80, dt, 1);
+        DAOFactory.getAlturaDao().insert(altura);
     }
 
     public static void cadastrarRegiao()

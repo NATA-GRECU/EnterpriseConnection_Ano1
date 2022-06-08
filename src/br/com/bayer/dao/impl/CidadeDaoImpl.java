@@ -28,6 +28,8 @@ public class CidadeDaoImpl implements CidadeDao {
 
             stt.executeUpdate();
 
+            System.out.println("Cidade cadastrada com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

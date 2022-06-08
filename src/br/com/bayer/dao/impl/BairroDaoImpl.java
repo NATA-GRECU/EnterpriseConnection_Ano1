@@ -27,6 +27,9 @@ public class BairroDaoImpl implements BairroDao {
             stt.setLong(4, bairro.getIdBairro());
 
             stt.executeUpdate();
+
+            System.out.println("Bairro cadastrado com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

@@ -28,6 +28,8 @@ public class ResidenciaDaoImpl implements ResidenciaDao {
 
             stt.executeUpdate();
 
+            System.out.println("Residência cadastrada com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

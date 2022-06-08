@@ -29,6 +29,8 @@ public class AlturaDaoImpl implements AlturaDao {
 
             stt.executeUpdate();
 
+            System.out.println("Altura cadastrada com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

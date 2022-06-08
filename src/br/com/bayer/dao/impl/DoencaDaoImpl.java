@@ -18,7 +18,7 @@ public class DoencaDaoImpl implements DoencaDao {
         try {
             conexao = ConnectionManager.getInstance().getConnetion();
 
-            stt = conexao.prepareStatement("INSERT INTO T_DOENCA (id_doenca, nome, sintomas, t_pessoa_id_pessoa) " +
+            stt = conexao.prepareStatement("INSERT INTO T_DOENCA (cid_doenca, nome, sintomas, t_pessoa_id_pessoa) " +
                     "VALUES (?, ?, ?, ?)");
 
             stt.setLong(1, doenca.getId());
@@ -27,6 +27,8 @@ public class DoencaDaoImpl implements DoencaDao {
             stt.setLong(4, doenca.getIdPessoa());
 
             stt.executeUpdate();
+
+            System.out.println("Doenca cadastrada com sucesso!");
 
         } catch (SQLException e) {
             e.printStackTrace();

@@ -29,6 +29,8 @@ public class TelefoneDaoImpl implements TelefoneDao {
 
             stt.executeUpdate();
 
+            System.out.println("Telefone cadastrada com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

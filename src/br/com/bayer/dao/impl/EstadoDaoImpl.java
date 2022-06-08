@@ -28,6 +28,8 @@ public class EstadoDaoImpl implements EstadoDao {
 
             stt.executeUpdate();
 
+            System.out.println("Estado cadastrado com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

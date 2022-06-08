@@ -28,6 +28,8 @@ public class RuaDaoImpl implements RuaDao {
 
             stt.executeUpdate();
 
+            System.out.println("Rua cadastrada com sucesso!");
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
